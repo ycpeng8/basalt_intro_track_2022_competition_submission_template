@@ -1,5 +1,6 @@
 import logging
 import coloredlogs
+import pickle
 
 import aicrowd_gym
 import minerl
@@ -9,7 +10,8 @@ from config import EVAL_EPISODES, EVAL_MAX_STEPS
 coloredlogs.install(logging.DEBUG)
 
 MINERL_GYM_ENV = 'MineRLObtainDiamondShovel-v0'
-
+MODEL = 'train/VPT-models/2x.model'
+WEIGHTS = 'train/VPT-models/rl-from-early-game-2x.weights'
 
 def main():
     # NOTE: It is important that you use "aicrowd_gym" instead of regular "gym"!
@@ -18,7 +20,7 @@ def main():
 
     # Load your model here
     # NOTE: The trained parameters must be inside "train" directory!
-    # model = None
+    model = pickle.load(open(MODEL, "rb"))
 
     for i in range(EVAL_EPISODES):
         obs = env.reset()
