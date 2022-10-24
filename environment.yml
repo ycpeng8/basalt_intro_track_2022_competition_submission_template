@@ -16,4 +16,4 @@ dependencies:
     - aicrowd-gym
     - gym=0.19
     - gym3
-    - attrss
+    - attrs
