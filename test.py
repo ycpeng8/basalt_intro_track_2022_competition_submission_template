@@ -32,7 +32,6 @@ def main():
     for i in range(EVAL_EPISODES):
         obs = env.reset()
         agent.reset()
-        done = False
         
         for step_counter in range(EVAL_MAX_STEPS):
 
